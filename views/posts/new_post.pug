@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+	h1 Create new post
+	form(method='POST' action='/posts')
+		input(type='text' placeholder='Title' name='title')
+		input(type='textarea' placeholder='Body' name='body')
+		input(type='text' placeholder='Topic' name='topic')
+		button(type='submit') Submit
+
+	

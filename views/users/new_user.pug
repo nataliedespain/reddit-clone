@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+	h1 Create an account
+	form(method='POST' action='/users')
+		input(type='text' placeholder='Username' name='un')
+		input(type='text' placeholder='Email' name='em')
+		input(type='password' placeholder='Password' name='pw')
+		input(type='password' placeholder='Confirm password' name='cpw')
+		button(type='submit') Submit

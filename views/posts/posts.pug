@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+	h1 All posts
+	a(href=`/posts/new`) New post
+	each post in posts
+		li
+			a(href=`/posts/${post.id}`) #{post.title} by #{post.username}
+	

@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+	h1= post.title
+	p Created by: #{post.username} at #{post.created_at}
+	p Topic" #{post.topic}
+	p= post.body
+	a(href=`/posts`) All posts

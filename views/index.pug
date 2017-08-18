@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	h1 Reddit
+	if cookies
+		a(href=`/users/${cookies}`) View my profile
+	else
+		a(href='/login') Login
+		a(href='/users/new') Sign up
+	h2 Posts
+	each post in posts
+		li
+			a(href=`/posts/${post.id}`) #{post.title} by #{post.username}
+	a(href=`/posts/new`) New post

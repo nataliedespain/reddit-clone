@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+	h1= user.username
+	if user.id == cookies
+		a(href=`/users/${user.id}/edit`) Edit account
+		br
+		a(href=`/logout`) Logout
+		br
+		a(href=`/users/${user.id}/delete`) Delete account
