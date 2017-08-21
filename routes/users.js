@@ -15,7 +15,10 @@ router.get('/new', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   knex('users').where({id: req.params.id})
   	.then(user => {
-  		res.render('../views/users/show_user', {user: user[0], cookies: req.cookies.user_id})
+  		knex.raw(`SELECT users.*, posts.id as post_id, posts.title, posts.body FROM users JOIN posts on users.id = posts.user_id WHERE users.id = ${req.params.id}`)
+  			.then(posts => {
+  				res.render('../views/users/show_user', {user: user[0], posts: posts.rows, cookies: req.cookies.user_id})
+  			})
   	});
 });
 
@@ -23,7 +26,7 @@ router.get('/:id/edit', (req, res, next) => {
 	if (req.params.id === req.cookies.user_id) {
 		knex('users').where({id: req.params.id})
   	.then(user => {
-  		res.render('../views/users/edit_user', {user: user[0]})
+  		res.render('../views/users/edit_user', {user: user[0], cookies: req.cookies.user_id})
   	});
 	} else {
 		res.send('can\'t edit another users account')

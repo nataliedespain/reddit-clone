@@ -1,7 +1,19 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		.nav
+			.left
+				h1
+					a(href='/') NOT REDDIT
+			.right
+				if cookies
+					a(href=`/users/${cookies}`) View my profile
+					a(href=`/users/${cookies}/edit`) Edit account
+					a(href='/logout') Logout
+				else
+					a(href='/login') Login
+					a(href='/users/new') Sign up
+		block content

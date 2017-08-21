@@ -1,11 +1,20 @@
 extends ../layout
 
 block content
-	h1 Edit post
-	form(method='POST' action=`/posts/${post.id}`)
-		input(type='text' placeholder='Title' name='title' value=`${post.title}`)
-		input(type='textarea' placeholder='Body' name='body' value=`${post.body}`)
-		input(type='text' placeholder='Topic' name='topic' value=`${post.topic_id}`)
-		button(type='submit') Submit
+	.editpost
+		h2 Edit post
+		form(method='POST' action=`/posts/${post.id}`)
+			input(type='text' placeholder='Title' name='title' value=`${post.title}`)
+			br
+			textarea(cols='60' rows='7' placeholder='Body' name='body' value=`${post.body}`)= post.body
+			br
+			select(name='topic')
+				each topic in topics
+					if topic.id === post.topic_id
+						option(value=`${topic.id}` selected)= topic.topic
+					else
+						option(value=`${topic.id}`)= topic.topic
+			br
+			button(type='submit') Submit
 
 	

@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+	.editcomment
+		h2 Edit Comment
+		form(method='POST' action=`/posts/${comment.post_id}/comments/${comment.id}`)
+			textarea(cols='60' rows='7' placeholder='Comment' name='body' value=`${comment.body}`)= comment.body
+			br
+			button(type='submit') Submit
+
+	

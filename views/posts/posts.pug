@@ -1,9 +1,21 @@
 extends ../layout
 
 block content
-	h1 All posts
-	a(href=`/posts/new`) New post
-	each post in posts
-		li
-			a(href=`/posts/${post.id}`) #{post.title} by #{post.username}
+	.index
+		.left
+			.header
+				h2 All Posts:
+			.indexnew
+				each post in posts
+					.indexpost
+						h3
+							a(href=`/posts/${post.id}`)= post.title
+						p.name Submitted by 
+							a(href=`/users/${post.user_id}`) #{post.username}
+						p.topic= post.topic
+				if cookies
+					a.create(href=`/posts/`)
+						.create All posts
+					a.create(href=`/posts/new`)
+						.create Create post
 	

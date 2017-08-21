@@ -1,10 +1,13 @@
 extends ../layout
 
 block content
-	h1= user.username
-	if user.id == cookies
-		a(href=`/users/${user.id}/edit`) Edit account
-		br
-		a(href=`/logout`) Logout
-		br
-		a(href=`/users/${user.id}/delete`) Delete account
+	.user
+		h2= user.username
+		h3 Posts:
+		each post in posts
+			.indexpost
+				h3
+					a(href=`/posts/${post.id}`)= post.title
+				p.name Submitted by 
+					a(href=`/users/${post.user_id}`) #{post.username}
+				p.topic= post.topic

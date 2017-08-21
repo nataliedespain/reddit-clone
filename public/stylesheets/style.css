@@ -1,8 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font-family: 'Open Sans'; }
 
 a {
-  color: #00B7FF; }
+  text-decoration: none;
+  color: orangered; }
+
+input:focus, textarea:focus, button:focus, select:focus {
+  outline: none; }
+
+textarea, input {
+  padding: 10px;
+  font-size: 1.1em;
+  border: 1px solid #efefef;
+  resize: none; }
+
+.nav {
+  width: 100vw;
+  height: 65px;
+  background: #CEE3F8;
+  padding: 10px;
+  display: flex; }
+  .nav a {
+    color: black;
+    text-decoration: none;
+    font-size: .8em;
+    padding-right: 25px; }
+    .nav a:hover {
+      text-decoration: underline; }
+  .nav .left {
+    width: 40%;
+    letter-spacing: 1px; }
+    .nav .left a {
+      font-weight: 800; }
+  .nav .right {
+    width: 60%;
+    text-align: right;
+    padding-top: 10px; }
+
+.index {
+  width: 96%;
+  margin: auto;
+  min-height: 500px;
+  position: relative;
+  display: flex; }
+  .index .left {
+    width: 100%; }
+    .index .left .header {
+      height: 15%;
+      padding-top: 3%; }
+    .index .left .indexnew {
+      padding: 10px; }
+      .index .left .indexnew .indexpost {
+        height: 100px;
+        padding: 10px;
+        border: 1px solid #efefef;
+        margin-bottom: 1%;
+        position: relative; }
+        .index .left .indexnew .indexpost h3 {
+          text-decoration: none; }
+          .index .left .indexnew .indexpost h3 a {
+            color: black; }
+        .index .left .indexnew .indexpost p.name {
+          font-size: .7em;
+          position: absolute;
+          bottom: 10px; }
+        .index .left .indexnew .indexpost p.topic {
+          font-size: .7em;
+          position: absolute;
+          bottom: 10px;
+          right: 10px; }
+      .index .left .indexnew a.create {
+        display: inline-block;
+        color: black;
+        text-decoration: none; }
+        .index .left .indexnew a.create .create {
+          width: 150px;
+          padding: 10px;
+          text-align: center;
+          background: #CEE3F8;
+          margin: 20px 10px 150px 0; }
+  .index .right {
+    width: 350px;
+    padding: 106px 20px 20px 20px; }
+    .index .right h2 {
+      padding: 10px 0; }
+    .index .right .search:nth-child(1) {
+      padding-bottom: 20px; }
+    .index .right .search input {
+      display: block;
+      margin: 0 auto;
+      width: 100%; }
+    .index .right .login {
+      margin-top: 30px; }
+      .index .right .login input {
+        margin: 10px 0;
+        width: 100%; }
+      .index .right .login button {
+        font-size: 1em;
+        padding: 10px 30px;
+        border: none;
+        background: #CEE3F8;
+        margin: 10px 0; }
+        .index .right .login button:hover {
+          cursor: pointerr; }
+
+.showpost {
+  width: 96%;
+  margin: auto;
+  min-height: 500px;
+  position: relative; }
+  .showpost .post {
+    padding: 50px 10px 50px 10px; }
+    .showpost .post p.sub {
+      font-size: .8em;
+      padding: 5px 0; }
+    .showpost .post p.body {
+      margin: 20px 0 20px 0; }
+    .showpost .post a.create {
+      display: inline-block;
+      color: black;
+      text-decoration: none; }
+      .showpost .post a.create .create {
+        width: 150px;
+        padding: 10px;
+        text-align: center;
+        background: #CEE3F8;
+        margin-top: 10%; }
+      .showpost .post a.create .marg {
+        margin-right: 10px; }
+  .showpost .comments h2 {
+    margin: 15px 0; }
+  .showpost .comments .comment {
+    border: 1px solid #efefef;
+    height: 100px;
+    padding: 10px;
+    margin: 10px 20px;
+    position: relative; }
+    .showpost .comments .comment h4 a {
+      color: black; }
+    .showpost .comments .comment p {
+      padding: 5px 0; }
+    .showpost .comments .comment .options {
+      position: absolute;
+      bottom: 10px;
+      right: 10px; }
+      .showpost .comments .comment .options a {
+        font-size: .7em; }
+      .showpost .comments .comment .options form {
+        display: inline-block;
+        margin-left: 20px; }
+        .showpost .comments .comment .options form button {
+          border: none;
+          background: none;
+          color: orangered; }
+          .showpost .comments .comment .options form button:hover {
+            cursor: pointer; }
+  .showpost .comments .addcomment {
+    margin: 40px 0 150px 20px; }
+    .showpost .comments .addcomment h3 {
+      margin: 10px 0; }
+    .showpost .comments .addcomment button {
+      font-size: 1em;
+      padding: 10px 30px;
+      border: none;
+      background: #CEE3F8;
+      margin: 10px 0; }
+      .showpost .comments .addcomment button:hover {
+        cursor: pointer; }
+
+.newpost, .editpost, .editcomment, .newuser, .edituser, .login {
+  width: 96%;
+  margin: auto;
+  min-height: 500px; }
+  .newpost h2, .editpost h2, .editcomment h2, .newuser h2, .edituser h2, .login h2 {
+    margin: 50px 0 20px 0; }
+  .newpost form > *, .editpost form > *, .editcomment form > *, .newuser form > *, .edituser form > *, .login form > * {
+    margin: 10px; }
+  .newpost button, .editpost button, .editcomment button, .newuser button, .edituser button, .login button {
+    font-size: 1em;
+    padding: 10px 30px;
+    border: none;
+    background: #CEE3F8;
+    margin: 10px; }
+    .newpost button:hover, .editpost button:hover, .editcomment button:hover, .newuser button:hover, .edituser button:hover, .login button:hover {
+      cursor: pointer; }
+  .newpost select, .editpost select, .editcomment select, .newuser select, .edituser select, .login select {
+    font-size: 1.1em;
+    background: none;
+    border: 1px solid #efefef;
+    padding: 10px 20px; }
+
+.user {
+  width: 96%;
+  margin: auto;
+  min-height: 500px; }
+  .user h2 {
+    margin: 50px 0; }
+  .user h3 {
+    margin: 10px 0; }
+  .user .indexpost {
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #efefef;
+    margin: 0 20px 1% 20px;
+    position: relative; }
+    .user .indexpost h3 {
+      text-decoration: none; }
+      .user .indexpost h3 a {
+        color: black; }
+    .user .indexpost p.name {
+      font-size: .7em;
+      position: absolute;
+      bottom: 10px; }
+    .user .indexpost p.topic {
+      font-size: .7em;
+      position: absolute;
+      bottom: 10px;
+      right: 10px; }
 
 /*# sourceMappingURL=style.css.map */

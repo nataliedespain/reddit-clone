@@ -1,13 +1,15 @@
 extends ../layout
 
 block content
-	h1 Edit #{user.username}
-	form(method='POST' action=`/users/${user.id}`)
-		input(type='text' placeholder='Username' name='un' value=`${user.username}`)
-		input(type='text' placeholder='Email' name='em' value=`${user.email}`)
-		//- input(type='password' placeholder='Password' name='pw')
-		//- input(type='password' placeholder='Confirm "Password' name='cpw')
-		button(type='submit') Submit
-	br
-	form(method='POST' action=`users/${user.id}/delete`)
-			button(type='submit') Delete account
+	.edituser
+		h2 Edit #{user.username}
+		form(method='POST' action=`/users/${user.id}`)
+			input(type='text' placeholder='Username' name='un' value=`${user.username}`)
+			br
+			input(type='text' placeholder='Email' name='em' value=`${user.email}`)
+			br
+			button(type='submit') Submit
+		br
+		br
+		form(method='POST' action=`users/${user.id}/delete`)
+				button(type='submit') Delete account

@@ -1,8 +1,33 @@
 extends ../layout
 
 block content
-	h1= post.title
-	p Created by: #{post.username} at #{post.created_at}
-	p Topic" #{post.topic}
-	p= post.body
-	a(href=`/posts`) All posts
+	.showpost
+		.post
+			h1= post.title
+			p.sub Created by: #{post.username} at #{post.created_at}
+			p.sub Topic: #{post.topic}
+			p.body= post.body
+			if cookies == post.user_id
+				a.create(href=`/posts/${post.id}/edit`) 
+					.create.marg Edit post
+			a.create(href=`/posts`) 
+				.create All posts
+		.comments
+			h2 Comments
+			each comment in comments
+				.comment
+					h4
+						a(href=`/users/${comment.user_id}`) #{comment.username}:
+					p= comment.body
+					if cookies == comment.user_id
+						.options
+							a(href=`/posts/${post.id}/comments/${comment.id}/edit`) Edit
+							form(method='POST' action=`/posts/${post.id}/comments/${comment.id}/delete`)
+								button(type='submit') Delete
+			.addcomment
+				if cookies
+					h3 Add Comment
+					form(method='POST' action=`/posts/${post.id}/comments`)
+						textarea(cols='60' rows='7' placeholder='Comment' name='body')
+						br
+						button(type='submit') Submit

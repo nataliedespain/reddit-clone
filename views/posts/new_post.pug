@@ -1,11 +1,19 @@
 extends ../layout
 
 block content
-	h1 Create new post
-	form(method='POST' action='/posts')
-		input(type='text' placeholder='Title' name='title')
-		input(type='textarea' placeholder='Body' name='body')
-		input(type='text' placeholder='Topic' name='topic')
-		button(type='submit') Submit
+	.newpost
+		h2 Create new post
+		br
+		form(method='POST' action='/posts')
+			input(type='text' placeholder='Title' name='title')
+			br
+			textarea(cols='60' rows='7' placeholder='Body' name='body')
+			br
+			select(name='topic')
+				option(disabled selected style='display: none;') Topic
+				each topic in topics
+					option(value=`${topic.id}`)= topic.topic
+			br
+			button(type='submit') Submit
 
 	

@@ -1,6 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800')
+
+$rblue: #CEE3F8
+
+$red: orangered
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+	font-family: 'Open Sans'
 
 a
-  color: #00B7FF
+	text-decoration: none
+	color: $red
+
+input, textarea, button, select
+	&:focus
+		outline: none
+
+textarea, input
+	padding: 10px
+	font-size: 1.1em
+	border: 1px solid #efefef
+	resize: none
+
+.nav
+	width: 100vw
+	height: 65px
+	background: $rblue
+	padding: 10px
+	display: flex
+	a
+		color: black
+		text-decoration: none
+		font-size: .8em
+		padding-right: 25px
+		&:hover
+			text-decoration: underline
+	.left
+		width: 40%
+		letter-spacing: 1px
+		a
+			font-weight: 800
+	.right
+		width: 60%
+		text-align: right
+		padding-top: 10px
+
+.index
+	width: 96%
+	margin: auto
+	min-height: 500px
+	position: relative
+	display: flex
+	.left
+		width: 100%
+		.header
+			height: 15%
+			padding-top: 3%
+		.indexnew
+			padding: 10px
+			.indexpost
+				height: 100px
+				padding: 10px
+				border: 1px solid #efefef
+				margin-bottom: 1%
+				position: relative
+				h3
+					text-decoration: none
+					a
+						color: black
+				p.name
+					font-size: .7em
+					position: absolute
+					bottom: 10px
+				p.topic
+					font-size: .7em
+					position: absolute
+					bottom: 10px
+					right: 10px
+			a.create
+				display: inline-block
+				color: black
+				text-decoration: none
+				.create
+					width: 150px
+					padding: 10px
+					text-align: center
+					background: $rblue
+					margin: 20px 10px 150px 0
+
+	.right
+		width: 350px
+		padding: 106px 20px 20px 20px
+		h2
+			padding: 10px 0
+		.search
+			&:nth-child(1)
+				padding-bottom: 20px
+			input
+				display: block
+				margin: 0 auto
+				width: 100%
+		.login
+			margin-top: 30px
+			input
+				margin: 10px 0
+				width: 100%
+			button
+				font-size: 1em
+				padding: 10px 30px
+				border: none
+				background: $rblue
+				margin: 10px 0
+				&:hover
+					cursor: pointerr
+
+
+.showpost
+	width: 96%
+	margin: auto
+	min-height: 500px
+	position: relative
+	.post
+		padding: 50px 10px 50px 10px
+		p.sub
+			font-size: .8em
+			padding: 5px 0
+		p.body
+			margin: 20px 0 20px 0
+		a.create
+			display: inline-block
+			color: black
+			text-decoration: none
+			.create
+				width: 150px
+				padding: 10px
+				text-align: center
+				background: $rblue
+				margin-top: 10%
+			.marg
+				margin-right: 10px
+	.comments
+		h2
+			margin: 15px 0
+		.comment
+			border: 1px solid #efefef
+			height: 100px
+			padding: 10px
+			margin: 10px 20px
+			position: relative
+			h4
+				a
+					color: black
+			p
+				padding: 5px 0
+			.options
+				position: absolute
+				bottom: 10px
+				right: 10px
+				a
+					font-size: .7em
+				form
+					display: inline-block
+					margin-left: 20px
+					button
+						border: none
+						background: none
+						color: $red
+						&:hover
+							cursor: pointer
+		.addcomment
+			margin: 40px 0 150px 20px
+			h3
+				margin: 10px 0
+			button
+				font-size: 1em
+				padding: 10px 30px
+				border: none
+				background: $rblue
+				margin: 10px 0
+				&:hover
+					cursor: pointer
+
+.newpost, .editpost, .editcomment, .newuser, .edituser, .login
+	width: 96%
+	margin: auto
+	min-height: 500px
+	h2
+		margin: 50px 0 20px 0
+	form  > *
+		margin: 10px
+	button
+		font-size: 1em
+		padding: 10px 30px
+		border: none
+		background: $rblue
+		margin: 10px
+		&:hover
+			cursor: pointer
+	select 
+		font-size: 1.1em
+		background: none
+		border: 1px solid #efefef
+		padding: 10px 20px
+
+.user
+	width: 96%
+	margin: auto
+	min-height: 500px
+	h2
+		margin: 50px 0
+	h3
+		margin: 10px 0
+	.indexpost
+		height: 100px
+		padding: 10px
+		border: 1px solid #efefef
+		margin: 0 20px 1% 20px
+		position: relative
+		h3
+			text-decoration: none
+			a
+				color: black
+		p.name
+			font-size: .7em
+			position: absolute
+			bottom: 10px
+		p.topic
+			font-size: .7em
+			position: absolute
+			bottom: 10px
+			right: 10px
+
+
+
+
+

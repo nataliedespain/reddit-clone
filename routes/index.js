@@ -5,7 +5,7 @@ var bcrypt = require('bcrypt');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
-	knex('posts').join('users', 'posts.user_id', '=', 'users.id')
+	knex('posts').join('users', 'posts.user_id', '=', 'users.id').join('topics', 'posts.topic_id', '=', 'topics.id').select('posts.*', 'users.username', 'topics.topic')
 		.then(posts => {
 			res.render('index', {posts: posts, cookies: req.cookies.user_id});
 		});
